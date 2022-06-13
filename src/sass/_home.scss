@@ -15,9 +15,10 @@ main {
   color: $black;
   width: 100%;
   padding: 0.5rem 1rem;
-  min-height: 100%;
+  min-height: calc(100vh - 3rem);
   gap: 2rem;
   z-index: 10;
+  height: auto;
 
   &.organic {
     border-radius: 35% 40% 56% 65%;
@@ -270,4 +271,51 @@ p {
 .zw {
   width: 0;
   position: absolute;
+}
+
+.photo-grid {
+  flex-shrink: 0;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .photo {
+    width: 30%;
+    overflow: hidden;
+    transition: 0.3s ease all;
+    transform: scale(1.05);
+
+    img {
+      display: block;
+    }
+
+    &:hover {
+      border-radius: 1rem !important;
+      transform: scale(1.2) !important;
+      z-index: 50;
+    }
+
+    &:nth-child(4n) {
+      border-radius: 35% 55% 61% 43%;
+    }
+    &:nth-child(4n + 1) {
+      border-radius: 55% 61% 43% 35%;
+    }
+    &:nth-child(4n + 2) {
+      border-radius: 61% 43% 35% 55%;
+    }
+    &:nth-child(4n + 3) {
+      border-radius: 43% 35% 55% 61%;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-landscape-max) {
+  .photo-grid {
+    .photo {
+      width: 45%;
+    }
+  }
 }
