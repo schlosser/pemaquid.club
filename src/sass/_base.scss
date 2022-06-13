@@ -8,6 +8,11 @@ body {
   height: 100%;
   line-height: 1.5;
   position: relative;
+
+  ::selection {
+    background-color: $light-pink;
+    text-shadow: none;
+  }
 }
 
 *,
@@ -22,6 +27,13 @@ a:hover {
   text-decoration: none;
 }
 
+sup {
+  font-size: 0.5em;
+  display: inline-block;
+  transform: translateY(-0.5rem);
+}
+
 img {
   max-width: 100%;
+  user-select: none;
 }

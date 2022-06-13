@@ -226,8 +226,8 @@ gulp.task(
 );
 
 gulp.task("deploy:rsync", (done) => {
-  cp.exec("rsync -avuzh ./dist/* dan:/srv/example.com/public_html/", () => {
-    process.stdout.write("Deployed to https://example.com\n");
+  cp.exec("rsync -avuzh ./dist/* dan:/srv/pemaquid.club/public_html/", () => {
+    process.stdout.write("Deployed to https://pemaquid.club\n");
     done();
   }).stdout.on("data", (data) => {
     process.stdout.write(data);
