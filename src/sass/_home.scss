@@ -20,6 +20,10 @@ main {
   z-index: 10;
   height: auto;
 
+  .nye24 & {
+    border-color: $nye24-red;
+  }
+
   &.organic {
     border-radius: 35% 40% 56% 65%;
   }
@@ -45,6 +49,10 @@ main {
   margin-top: -3rem;
   font-size: 20vw !important;
 
+  .nye24 & {
+    color: $nye24-red;
+  }
+
   @media screen and (max-width: $phone-landscape-max) {
     display: none;
   }
@@ -67,6 +75,10 @@ h1 {
     line-height: 1.2;
     color: $pink;
 
+  .nye24 & {
+    color: $nye24-red;
+  }
+
     .flip {
       transform: none;
       margin-top: 1rem;
@@ -81,6 +93,10 @@ h1 {
     &:hover {
       text-decoration: none;
       color: $pink;
+
+  .nye24 & {
+    color: $nye24-red;
+  }
     }
   }
 }
@@ -96,6 +112,11 @@ h1 {
   border-radius: 0.25rem;
   display: inline-block;
   transition: 0.3s ease all;
+
+  .nye24 & {
+    background-color: $nye24-red;
+    border-color: $nye24-red;
+  }
 
   &:hover {
     transform: scale(1.05);
@@ -119,6 +140,10 @@ h1 {
       flex-shrink: 0;
       color: $pink;
       white-space: nowrap;
+
+  .nye24 & {
+    color: $nye24-red;
+  }
 
       @media screen and (min-width: $tablet-landscape-max) {
         width: 6rem;
@@ -163,7 +188,9 @@ p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 100%;
+  margin-bottom: -2rem;
 
   .fete {
     position: absolute;
@@ -187,6 +214,18 @@ p {
 
     &:first-child(3) a {
       border-radius: 61% 39% 20% 45%;
+    }
+
+    &:nth-child(odd) {
+      min-width: 35%;
+    }
+
+    &:nth-child(even) {
+      line-height: 1.1;
+    }
+
+    &.no-d {
+      display:none;
     }
   }
 
@@ -220,6 +259,35 @@ p {
   top: 0;
   overflow: hidden;
   z-index: 0;
+}
+
+.frog-right {
+  width: 30vw;
+  position: absolute;
+  right:3vw;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media screen and (max-width: $phone-landscape-max) {
+    width: 50vw;
+    transform: translateY(-50%);
+  }
+}
+
+.frog-left {
+  width: 30vw;
+  position: absolute;
+  left:3vw;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media screen and (max-width: $phone-landscape-max) {
+    width: 30vw;
+    top: unset;
+    left: -2rem;
+    bottom: -2rem;
+    transform: rotate(30deg);
+  }
 }
 
 .claw-wide {
